@@ -55,7 +55,7 @@ Vue.component('message-form', {
 
 Vue.component('message-row', {
     props: ['message', 'editMethod', 'messages'],
-    template: '<div style="position: relative; width: 300px">' +
+    template: '<div>' +
         '<i>({{message.id}}) </i>{{message.text}}' +
         '<span style="position: absolute; right: 0">' +
         '<input type="button" value="Изменить" @click="edit">' +
@@ -85,7 +85,7 @@ Vue.component('messages-list', {
             message: null
         }
     },
-    template: '<div style="pi">' +
+    template: '<div style="position: relative; width: 500px;">' +
         '<message-form :messages="messages" :messageAttr="message"></message-form>'+
         '<message-row v-for="message in messages" :key="message.id" :message="message" ' +
         ':editMethod="editMethod" :messages="messages"></message-row>' +
